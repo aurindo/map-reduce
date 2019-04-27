@@ -50,11 +50,8 @@ class MRRecommendations(MRJob):
 
 		for k,v in final.items():
 			items.append((k, v))
-
 		items = sorted(items, key = self.by_value, reverse = True)
-
 		size = min(N, len(items))
-
 		return items[:size]
 
 	def by_value(self, item):
