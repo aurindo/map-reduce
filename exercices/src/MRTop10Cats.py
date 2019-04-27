@@ -1,6 +1,7 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 
+# python3 src/MRTop10Cats.py dataset/cats.txt
 class MRTop10Cats(MRJob):
 	top10 = []
 	max = 5

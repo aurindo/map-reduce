@@ -2,6 +2,7 @@ from mrjob.job import MRJob
 import pdb
 from mrjob.step import MRStep
 
+#  python3 src/MRHowManySale.py dataset/sales.csv
 class MRHowManySale(MRJob):
 	def mapper(self, key, line):
 		_, product, _, _, _, _, _, country, _, _, _, _ = line.split(",")

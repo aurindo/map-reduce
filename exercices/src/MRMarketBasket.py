@@ -1,6 +1,7 @@
 from mrjob.job import MRJob
 from itertools import combinations
 
+# python3 src/MRMarketBasket.py dataset/items.txt
 class MRMarketBasket(MRJob):
 
 	def generta_combinations(self, items):

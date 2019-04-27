@@ -1,6 +1,7 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 
+# python3 src/MRMovingAverageTotalSales.py dataset/sales.csv
 class MRMovies(MRJob):
 	def steps(self):
 		return [

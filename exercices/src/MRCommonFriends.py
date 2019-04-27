@@ -1,6 +1,8 @@
 from mrjob.job import MRJob
 import pdb
 
+# [FAST] python3 src/MRCommonFriends.py dataset/common-friends.txt
+# python3 src/MRCommonFriends.py dataset/Marvel-graph.txt
 class MRCommonFriends(MRJob):
 	def mapper(self, key, line):
 		values = line.split(' ')

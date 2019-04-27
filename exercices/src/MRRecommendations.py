@@ -1,6 +1,7 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 
+# python3 src/MRRecommendations.py dataset/recommendation.csv
 class MRRecommendations(MRJob):
 	def steps(self):
 		return [

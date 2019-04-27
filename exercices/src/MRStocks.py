@@ -1,5 +1,6 @@
 from mrjob.job import MRJob
 
+#  python3 src/MRStocks.py dataset/stocks.txt
 class MRStocks(MRJob):
 	def mapper(self, _, line):
 		name, timestamp, value = line.split(',')

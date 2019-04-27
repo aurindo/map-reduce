@@ -3,6 +3,7 @@ import pdb
 from datetime import datetime
 from mrjob.step import MRStep
 
+# python3 src/MRMovingAverageTotalSales.py dataset/sales.csv
 class MRMovingAverageTotalSales(MRJob):
 
 	def parseStringToDate(self, dateStr):
