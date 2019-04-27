@@ -43,7 +43,22 @@ class MRRecommendations(MRJob):
 				if k not in final:
 					final[k] = 0
 				final[k] = final[k] + int(v)
-		yield item, final
+		yield item, self.topN(final, 3)
+
+	def topN(self, final, N):
+		items = []
+
+		for k,v in final.items():
+			items.append((k, v))
+
+		items = sorted(items, key = self.by_value, reverse = True)
+
+		size = min(N, len(items))
+
+		return items[:size]
+
+	def by_value(self, item):
+		return item[1]
 
 if __name__ == '__main__':
 	MRRecommendations.run()
