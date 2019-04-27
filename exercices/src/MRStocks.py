@@ -2,7 +2,7 @@ from mrjob.job import MRJob
 
 class MRStocks(MRJob):
 	def mapper(self, _, line):
-		name, timestamp, value = line.split(",")
+		name, timestamp, value = line.split(',')
 		yield name, (timestamp, float(value))
 
 	def reducer(self, key, values):

@@ -19,7 +19,7 @@ class MRHowManySale(MRJob):
 
 	def reducer_by_countries(self, key, values):
 		yield key, list(values)
-		
+
 	def steps(self):
 		return [
 			MRStep(mapper=self.mapper,
