@@ -1,8 +1,10 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 
-# python3 src/MRMovies.py dataset/movies.txt
-class MRMovies(MRJob):
+# python3 src/MRQuestion1.py dataset/movies.txt
+# Qual o filme de maior popularidade? R.: 50
+# Qual o filme menos popular? R.: 1407
+class MRQuestion1(MRJob):
 	def steps(self):
 		return [
 			MRStep(mapper=self.mapper_get_movies_by_score,
@@ -16,8 +18,7 @@ class MRMovies(MRJob):
 
 	def reducer_get_movie_avg(self, key, values):
 		scores = list(values)
-		avg = sum(scores) / len(scores)
-		yield None, (avg, key)
+		yield None, (sum(scores), key)
 
 	def reducer_get_movies_ordered(self, key, values):
 		items = list(values)
@@ -27,4 +28,4 @@ class MRMovies(MRJob):
 			yield item[1], item[0]
 
 if __name__ == '__main__':
-	MRMovies.run()
+	MRQuestion1.run()
